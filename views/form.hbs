@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Add</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        #label_retired
+        {
+            position: relative;
+            left:-20px;
+        }
+        .form2
+        {
+          position: relative;
+          left: 90px;
+          top: -37px;
+        }
+        #goals
+        {
+          font-size: 20px;
+          font-weight: 400;
+        }
+        .cont
+        {
+          transform: translateY(-40px);
+        }
+        .check
+        {
+          display: inline;
+        }
+         #button2
+        {
+          position: relative;
+          left: -90px;
+          top: -49px;
+        }
+        #button1
+        {
+          position: relative;
+          left: 75px;
+        }
+        
+    </style>
+</head>
+
+<body>
+  <div class="container mt-5 pt-5 cont">
+    <div class="row">
+      <div class="col-12">
+          <h3>Please enter the following details:</h3><br>
+        <form action="/form" method="POST">
+                <div class="form-check">
+                        <label for="exampleRadios1" id="label_retired">Are you currently retired?</label><br>
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="" checked>
+                            <label class="form-check-label" for="exampleRadios1">
+                              No
+                            </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="true">
+                    <label class="form-check-label" for="exampleRadios2">
+                      Yes
+                    </label>
+                  </div><br>
+        <div class="form-group">
+          <label>How old are you?</label>
+          <input type="text" name="age1" class="form-control" placeholder="Enter your age">
+          <small class="form-text text-muted">This will help us analyse your investment horizon and your risk tolerance</small>
+        </div><br>
+
+        <div class="form-group">
+          <label>Annual Pre-tax Income</label>
+          <input type="text" name="salary" class="form-control" placeholder="Enter your pre-tax income">
+          <small class="form-text text-muted">This will help us analyse your investing capacity</small>
+        </div><br>
+
+        <div class="form-group">
+          <label>Percentage of annual income that you are willing to invest</label>
+          <input type="text" name="percentage" class="form-control" placeholder="Enter your investment percentage">
+          <small class="form-text text-muted">This will help us analyse your investing capacity. <a href="/form1">Click here</a> to refer to our recommended investment percentages for different income slabs.</small>
+        </div><br>
+
+        <div class="form-group">
+        <label id="goals">Your Financial Goals:</label>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="check1" value="true" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">
+              Emergency Fund
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="check2" value="true"  id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">
+              Retirement Planning
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="check3" value="true" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">
+              Building a house
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="check4" value="true" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">
+              Children's higher education/Marriage
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="check5" value="true" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">
+              Going on a vacation
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="check6" value="true" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">
+              Buying a luxury car
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="check7" value="true" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">
+              General investing
+            </label>
+        </div>
+        </div><br>
+        <button type="submit" class="btn btn-primary" id="button1"> Submit </button>
+      </form><br><br>
+      <div class="form2">
+      <form action="/" method="GET">
+          <button type="submit" class="btn btn-primary" id="button2"> Back </button>
+      </form>
+      </div>
+      </div>
+      
+    </div>
+  </div>
+</body>
+
+</html>

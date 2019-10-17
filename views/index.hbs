@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Advisor</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/public/style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" >
+        <h2><a class="navbar-brand" href="#">Advisor</a></h2>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#promotions">Why Advisor<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="#steps">How it works</a>
+            </li>
+            <li class="nav-item dropdown active">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Features
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="#features1">Personalized Guidance</a>
+                  <a class="dropdown-item" href="#features2">Tax-smart Investing</a>
+                  <a class="dropdown-item" href="#features3">Retirement Planning</a>
+                </div>
+              </li>
+          </ul>
+          <form action="/form" method="GET" class="form-inline my-2 my-lg-0">
+            <button class="btn btn-outline-success my-2 my-sm-0 bg-success text-white" type="submit" id="get_started" ><b>Get Started</b> </button>
+          </form>
+          <form action="/signup" method="GET" class="form-inline my-2 my-lg-0">
+            <button class="btn btn-outline-success my-2 my-sm-0 bg-success text-white" type="submit"><b>Log in</b> </button>
+          </form>
+        </div>
+      </nav>
+      
+      <header id="masthead" class="site-header" role="banner">
+          <div class="header-shadow">
+            <div class="text">
+                Hello, Investor
+            </div>
+            <div class="text1">
+              Advisor is a Financial Planning Web App for people who want to<br> maximise the returns from their investments keeping in mind<br> their financial goals and their current financial condition.
+            </div>
+            <form action="/form" method="GET">
+            <button type="submit" class="btn btn-success btn-lg started2"><b>Get Started</b></button>
+          </form>
+          </div>
+      </header>
+      <div class="why">
+      <!-- <div id="promotions" class="container"><center><h2>Right for every type of investor </h2></center></div> -->
+      <div class="container" id="promotions">
+        <br><br><br><br><br>
+          <center><h1><b>Right for every type of investor</b></h1></center><br><br>
+            <div class="row">
+              <div class="col-md-4">
+      <div id="exTab3" class="container">	
+      <ul  class="nav nav-pills nav-justified">
+            <li class="nav-item active">
+              <a  class="nav-link" href="#1b" data-toggle="pill">New Investor</a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#2b" data-toggle="pill">Hands-off investor</a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#3b" data-toggle="pill">Hands-on Investor</a>
+            </li>
+          </ul>
+      
+            <div class="tab-content clearfix">
+              <div class="tab-pane active" id="1b">
+                <br><br>
+                <h5>Are you a new investor and are confused about which all securities you should invest in and how much money to invest in each of these securities? If this is the case then viola! Advisor is there for your help.<br><br> Advisor is especially essential for such first-time investors as after taking details of the user like his/her age, annual income, goals etc, Advisor prepares a personalized portfolio for the user by using the details entered by the user to determine the user's investment horizon, risk tolerance and investing capacity. It also provides investors with the pros and cons of each financial security so that the users can decide whether the investment percentages that we suggest for different securities are right for them or not and then invest accordingly.<br><br> The users will also be able to signup to our site so that they can view the portfolio that we made for them by directly logging into the site and thus would not have to enter all their details again when they visit our site the next time they wants to invest.<br><br> In addition to this, we also give suggestions for the percentage of money you should be saving if you belong to different income slabs which would help you to determine whether you have been saving enough amount of money or that you should try to push up your savings by reducing your expenses.
+                </h5>
+              </div>
+              <div class="tab-pane" id="2b"><br><br>
+                <h5>Are you a hands-off investor and are doubtful whether you should continue to invest in the securities that your financial advisor recommends for you or shift your focus towards other types of securities which could prove to be more benefial for you? If this is the case then viola! Advisor is there for your help.<br><br> Advisor is especially essential for such hands-off investors as after taking details of the user like his/her age, annual income, goals etc, Advisor prepares a personalized portfolio for the user by using the details entered by the user to determine the user's investment horizon, risk tolerance and investing capacity. It also provides investors with the pros and cons of each financial security so that the users can decide whether the investment percentages that we suggest for different securities are right for them or not and then invest accordingly.<br><br> The users will also be able to signup to our site so that they can view the portfolio that we made for them by directly logging into the site and thus would not have to enter all their details again when they visit our site the next time they wants to invest.<br><br> In addition to this, we also give suggestions for the percentage of money you should be saving if you belong to different income slabs which would help you to determine whether you have been saving enough amount of money or that you should try to push up your savings by reducing your expenses.</h5>
+              </div>
+              <div class="tab-pane" id="3b"><br><br>
+                <h5>Are you a hands-on investor and are doubtful whether the securities you are currently investing in and the amount of money you are investing in these securities is perfect for you or not? If this is the case then viola! Advisor is there for your help.<br><br> Advisor is especially essential for such hands-on investors as after taking details of the user like his/her age, annual income, goals etc, Advisor prepares a personalized portfolio for the user by using the details entered by the user to determine the user's investment horizon, risk tolerance and investing capacity. It also provides investors with the pros and cons of each financial security so that the users can decide whether the investment percentages that we suggest for different securities are right for them or not and then invest accordingly.<br><br> The users will also be able to signup to our site so that they can view the portfolio that we made for them by directly logging into the site and thus would not have to enter all their details again when they visit our site the next time they wants to invest.<br><br> In addition to this, we also give suggestions for the percentage of money you should be saving if you belong to different income slabs which would help you to determine whether you have been saving enough amount of money or that you should try to push up your savings by reducing your expenses.</h5>
+              </div>
+              
+            </div>
+            <br><br><br><br><br><hr>
+        </div>
+        
+      </div>
+    </div>
+</div>
+        <!-- <div class="img2">
+            <img src="http://www.ic.or.th/en/images/InvestorService/PicInveator/investors12.jpg" >
+          </div> -->
+          <div class="container" id="steps"><br><br><br>
+            <center><h1><b>How does it work?</b></h1></center><br><br><br>
+              <!-- Example row of columns -->
+              <div class="row">
+                <div class="col-md-4">
+                  <!-- <img src="../public/001-number-1.png"> -->
+                  <h2> We will learn a bit about you</h2>
+                  <p>What is your retirement status? How old are you and how much do you earn? What are you saving for? Maybe you’re building an emergency fund, saving for buying a home or planning for retirement. Or, maybe you’re just investing for the sake of investing. </p>
+                
+                </div>
+                <div class="col-md-4">
+                  <h2>We will build you a portfolio</h2>
+                  <p>Once we know a bit about you and your investing goals, we’ll build a personalized portfolio with a risk level and an expected value of return that suits each goal. This portfolio will usually be a mix of government securities, investment funds and stock market securities. </p>
+                 
+               </div>
+                <div class="col-md-4">
+                  <h2> We will keep you updated</h2>
+                  <p> After you have decided upon the portfolio you would like to follow, we will keep reminding you to make timely investments in each of the choosen securities and we will also keep a record of which all installments you missed and which ones you successfully paid.</p>
+                </div>
+              </div>
+              
+            </div> 
+      </div>
+        <div class="img1">
+        <img src="https://www.arabbank.com/images/default-source/default-album/investor-relationsbdd331ae60c367ec9513ff5c007b40dd.png?sfvrsn=2c10569f_0" >
+      </div>
+      <hr>
+       
+      <div class="row featurette" id="features1">
+          <div class="col-md-7">
+            <h2 class="featurette-heading">Personalized Guidance. <span class="text-muted">Invest according to your goals.</span></h2>
+            <p class="lead">We beleive that every individual is unique and so are their goals. Buying a home, going on a vacation, having a child, retiring —these are exciting life moments that come with so many financial questions. Our tools are here to help guide you along the way.</p>
+          </div>
+          <div class="col-md-5">
+              <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="580" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><image xlink:href="../public/personalized.jpg" height="100%" width="100%"/></svg>
+          </div>
+        </div>
+    
+        <hr class="featurette-divider" id="features2">
+    
+        <div class="row featurette">
+          <div class="col-md-7 order-md-2">
+            <h2 class="featurette-heading">Tax-Smart Investing. <span class="text-muted">Save your income tax.</span></h2>
+            <p class="lead">Learn how to take full advantage of the tax-deferral provisions that the government provides for the benefit of citizens. Other investment managers may estimate your long-term returns, but they might not be acknowledging the fact that your after-tax return is what matters.</p>
+          </div>
+          <div class="col-md-5 order-md-1">
+              <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><image xlink:href="../public/tax-smart.jpg" height="100%" width="100%"/></svg>
+          </div>
+        </div>
+    
+        <hr class="featurette-divider" id="features3">
+    
+        <div class="row featurette">
+          <div class="col-md-7">
+            <h2 class="featurette-heading">Retirement Planning. <span class="text-muted">Save for old age.</span></h2>
+            <p class="lead">With the escalating cost for healthcare and increasing life expectancy, retirement planning has become all the more important. You cannot work forever and depending on your children is unfair. Tell us when and how you want to retire and we will guide you on the path forward.</p>
+          </div>
+          <div class="col-md-5">
+              <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><image xlink:href="https://5.imimg.com/data5/QQ/QQ/GLADMIN-/retirement-plan-500x500.jpg" height="100%" width="100%"/></svg>
+          </div>
+        </div>
+    
+        <hr class="featurette-divider">
+    3
+        <!-- /END THE FEATURETTES -->
+    
+      </div>
+
+
+      <footer id="foot">
+        <br>
+        <center><h5>&copy; 2019  ||  Made by Sankush Gupta</h5></center>
+        <br>
+      </footer>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</body>
+</html>

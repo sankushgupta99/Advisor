@@ -1,0 +1,157 @@
+html {
+    scroll-behavior: smooth;
+  }
+.header-shadow
+      {
+        background-color: #000066;
+        background-image: url('../public/finance1.jpg');
+        background-repeat: no-repeat;
+        background-position: right top;
+        width:1520px;
+        height:700px;
+        position: relative;
+        top: 60px;
+      }
+      .img1
+      {
+          position: relative;
+          top: 190px;
+      }
+      .img2
+      {
+          position: relative;
+          top: -747px;
+          left: 1100px;
+      }
+      .text
+      {
+        color: white;
+        text-align: justify;
+        text-indent: 200px;
+        font-family: sans-serif;
+        font-size: 70px;
+        font-weight: bold;
+        display: inline;
+        position: absolute;
+        left:-30px;
+        top: 300px;
+    
+      }
+      #get_started
+      {
+        position: relative;
+        right: 20px;
+      }
+      .text1
+      {
+        color: rgba(236, 240, 11, 0.932);
+        font-size: 22px;
+        position: absolute;
+        font-weight: bold;
+        left:170px;
+        top: 400px;
+      }
+      .started2
+      {
+        position: absolute;
+        left:170px;
+        top: 520px;
+      }
+      #exTab3 .nav-pills > li > a {
+        border-radius: 4px 4px 0 0 ;
+      }
+      #exTab3
+      {
+        position: relative;
+        left: -10px;
+        top: 50px;
+        width:1520px;
+        height:700px;
+      }
+      #promotions
+      {
+        position: relative;
+        top: 100px;
+        font-size: 8px !important;
+        font-weight: bold !important;
+        color: #212529;
+        background-color: white;
+      }
+
+      #exTab3 .tab-content {
+        color : black;
+        background-color: rgb(227, 232, 233);
+        padding : 5px 15px;
+      }  
+      #exTab3 .active > a
+      {
+        font-size: 22px !important;
+        font-weight: bold !important;
+          color: black ; 
+          background-color: rgb(227, 232, 233);
+      }
+      #exTab3 ul>li>a
+      {
+        font-size: 22px;
+        color: black ;
+      }
+    
+    #steps
+    {
+        position: relative;
+        top: 50px;
+    }
+  #foot
+  {
+      position: relative;
+      top: 190px;
+      color: white;
+      background-color: black;
+  }
+  .featurette-divider {
+    position: relative;
+    top: 200px;
+    left: 50px;
+    margin: 2.5rem 0; 
+    margin-right: 10rem;
+    margin-left: 4.5rem;
+  }
+  .featurette{
+      position: relative;
+      top: 200px;
+      left: 50px;
+      padding-top: 5rem;
+  padding-bottom: 4rem;
+  padding-left: 10rem;
+  padding-right: 17rem;
+  color: black;
+  }
+  
+ 
+  .featurette-heading {
+    font-weight: 420;
+    line-height: 1;
+    letter-spacing: -.05rem;
+  }
+  
+  
+
+  
+  @media (min-width: 40em) {
+    
+    .carousel-caption p {
+      margin-bottom: 1.25rem;
+      font-size: 1.25rem;
+      line-height: 1.4;
+    }
+  
+    .featurette-heading {
+      font-size: 50px;
+    }
+  }
+  
+  @media (min-width: 62em) {
+    .featurette-heading {
+      margin-top: 7rem;
+    }
+  }

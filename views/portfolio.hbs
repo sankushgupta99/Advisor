@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+      {{!-- #button2
+      {
+        position:relative;
+        left:500px;
+        top:-4790px;
+      } --}}
+        #card1b
+        {
+            margin-left: 60px;
+        }
+        #pic1
+        {
+            margin-left: 30px;
+        }
+        body
+        {
+            background-color: #ecf2f9;
+        }
+        li {font-size: 30px;}
+        #heading1
+        {
+            font-family: Impact;
+        }
+        {{!-- #heading2
+        {
+            font-family: Impact;
+        } --}}
+        .amount
+        {
+          font-size: 20px;
+        }
+        #pic2
+        {
+          margin-left: 20px;
+        }
+        #pic3
+        {
+          margin-left: 20px;
+          margin-top: 20px;
+        }
+        #pic4 
+        {
+          margin-left: 20px;
+          margin-top: 20px;
+          border: 1px solid grey;
+        }
+        #pic5 
+        {
+          margin-left: 20px;
+        }
+        #pic6 
+        {
+          margin-left: 20px;
+          margin-top: 20px;
+          border: 1px solid grey;
+        }
+        #pic7
+        {
+          margin-left: 20px;
+          margin-top: 20px;
+        }
+        #pic8
+        {
+          margin-left: 20px;
+          margin-top: 20px;
+        }
+        #pic9
+        {
+          margin-left: 20px;
+          margin-top: 20px;
+        }
+      #foot
+      {
+      color: white;
+      background-color: black;
+      }
+     </style>
+      <script type="text/javascript" src="/public/canvasjs.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
+    <script>
+  
+      fetch("https://advisor-web.herokuapp.com/api/data")
+      .then(res => res.json())
+      .then(res => {
+        console.log(res);
+        let data1 = res;
+        window.onload = function () {
+          var p1,p2,p3,p4,p5,p6,p7,p8,p9;
+          let age = data1.data[0].age;
+          let sal=data1.data[0].salary;
+          if(data1.data[0].salary>150000)
+          p1=150000;
+          else
+          p1=data1.data[0].salary;
+
+          if(data1.data[0].salary>200000)
+          p2=50000;
+          else if(data1.data[0].salary>150000)
+          p2=data1.data[0].salary-150000;
+          else
+          p2=0;
+
+          if(data1.data[0].salary>255000)
+          p3=55000;
+          else if(data1.data[0].salary>200000)
+          p3=data1.data[0].salary-200000;
+          else
+          p3=0;
+
+          if(age<40)
+          {
+            p4=data1.data[0].salary6;
+            p5=data1.data[0].salary3;
+            p6=data1.data[0].salary3;
+            p7=data1.data[0].salary4;
+            p8=data1.data[0].salary3;
+            p9=data1.data[0].salary3;
+          }   
+          else if(age>=40 && age<50)
+          {
+            p4=data1.data[0].salary6;
+            p5=data1.data[0].salary3;
+            p6=data1.data[0].salary4;
+            p7=data1.data[0].salary3;
+            p8=data1.data[0].salary3;
+            p9=data1.data[0].salary3;
+          }  
+          else if(age>=50 && age<70)
+          {
+            if(!data1.data[0].retired)
+            {
+            p4=data1.data[0].salary5;
+            p5=data1.data[0].salary3;
+            p6=data1.data[0].salary6;
+            p7=data1.data[0].salary9;
+            p8=data1.data[0].salary9;
+            p9=data1.data[0].salary3;
+            }
+            else
+            {
+            p4=data1.data[0].salary5;
+            p5=data1.data[0].salary3;
+            p6=data1.data[0].salary7;
+            p7=data1.data[0].salary9;
+            p8=data1.data[0].salary9;
+            p9=0;
+            }
+          } 
+          else
+          {
+            p4=data1.data[0].salary4;
+            p5=0;
+            p6=data1.data[0].salary8;
+            p7=data1.data[0].salary9;
+            p8=data1.data[0].salary9;
+            p9=0;
+          }  
+    var chart = new CanvasJS.Chart("chartContainer",
+    {
+      title:{
+        text: "Percentage of money to be invested in various securities",
+        fontFamily: "Sans-serif"
+      },
+      data: [
+      {
+       type: "doughnut",
+       dataPoints: [
+       {  y: (p1/sal)*100, indexLabel: "Public Provident Fund" },
+       {  y: (p2/sal)*100, indexLabel: "National Pension Scheme" },
+       {  y: (p3/sal)*100, indexLabel: "Health Insurance" },
+       {  y: (p4/sal)*100, indexLabel: "Index Funds" },
+       {  y: (p5/sal)*100, indexLabel: "Actively managed Mutual Funds" },
+       {  y: (p6/sal)*100, indexLabel: "Government Bonds/Fixed Deposit" },
+       {  y: (p7/sal)*100, indexLabel: "Mid Cap Stocks" },
+       {  y: (p8/sal)*100, indexLabel: "Small Cap Stocks" },
+       {  y: (p9/sal)*100, indexLabel: "REITs" }
+       ]
+     }
+     ]
+   });
+    chart.render();
+  };
+      })
+      .catch(err => console.log(err));
+  </script> 
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</head>
+<body>
+    <div class="container mt-5 pt-5 cont">
+    <div class="row">
+      <div class="col-15">
+    {{#each data}}
+    {{#if loggedIn}}
+    <h1 id="heading2"><center>Hi,&nbsp;{{first_name}}&nbsp;!!</center></h1><br>
+    {{/if}}
+    <h1 id="heading1"><u><center>Your Personalized Investment Portfolio</center></u></h1><br><br>
+    <ul>
+        <div id="chartContainer" style="height: 400px; width: 100%;"></div><br><br>
+    <li><h2>Tax-Smart Investments</h2>
+    </ul><br>
+    <div class="card mb-5" id="card1">
+  <div class="row no-gutters">
+    <div class="col-md-3" >
+        <br><br>
+      <img src="../public/PPF.jpg" class="card-img" alt="..." id="pic1">
+    </div>
+    <div class="col-md-7">
+      <div class="card-body" id="card1b">
+          <br>
+        <h2 class="card-title">Public Provident Fund(PPF)</h2>
+        <p class="card-text">A PPF or Public Provident Fund is a savings scheme offered by the Government of India. The interest on the account is paid by the government of India and set every quarter. The applicable PPF interest rate for 1st July to 30th September 2019 (Q2 FY 2019-20) has been fixed at 7.9%.The principal and interest in the PPF account are guaranteed by the Government. Contributions to the account up to Rs 1.5 lakh per annum are tax-free. Interest on the PPF account is also tax-free. Thus, PPF gives a 3-fold tax benefit.</p>
+        <u>Investment Amount: </u>
+        {{#ifCond salary 150000}}
+        <b><p class="card-text amount">₹1,50,000</p></b><br>
+        {{else}}
+        <b><p class="card-text amount">₹{{salary}}</p></b><br>
+        {{/ifCond}}
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="card mb-5" id="card1">
+  <div class="row no-gutters">
+    <div class="col-md-3" >
+        <br><br>
+      <img src="../public/NPS.jpg" class="card-img" alt="..." id="pic2">
+    </div>
+    <div class="col-md-7">
+      <div class="card-body" id="card1b">
+          <br>
+        <h2 class="card-title">National Pension Scheme(NPS)</h2>
+        <p class="card-text">National Pension System (NPS) is a perfect solution for retirement planning. It provides old age income with reasonable market based returns.  The NPS invests the contributions of its subscribers into various market linked instruments such as equities and debts and the final pension amount depends on the performance of these investments. It is based on unique Permanent Retirement Account Number (PRAN) which is allotted to every subscriber for NPS. Contributions to the National Pension Scheme up to Rs 50 thousand per annum are tax-free. While up to 60% of the maturity corpus can be withdrawn as a lump sum on maturity, the balance is compulsorily annuitized, i.e., balance is used to fund the annuity (pension) after retirement. This annuity is fully taxable in the year of receipt as income from other sources.</p>
+        <u>Investment Amount: </u>
+        {{#ifCond salary 200000}}
+        <b><p class="card-text amount">₹50,000</p></b><br>
+        {{else}}
+        {{#ifCond salary 150000}}
+        <b><p class="card-text amount">₹{{salary1}}</p></b><br>
+        {{else}}
+        <b><p class="card-text amount">₹0</p></b><br>
+        {{/ifCond}}
+        {{/ifCond}}
+      </div>
+    </div>
+  </div>
+</div>
+  <div class="card mb-5" id="card1">
+  <div class="row no-gutters">
+    <div class="col-md-3" >
+        <br><br>
+      <img src="../public/health_ins.jpg" class="card-img" alt="..." id="pic3">
+    </div>
+    <div class="col-md-7">
+      <div class="card-body" id="card1b">
+          <br>
+        <h2 class="card-title">Health Insurance</h2>
+        <p class="card-text">Health insurance is one of the most imperative plan you should have in your portfolio. It works in a simple manner, the insured pays regular premiums to the insurer in return of which the insurer promises to cover him financially in case of a medical contingency. But there’s more to health insurance than just reimbursing the individual for the expenses you incur on your medical treatment. A health plan acts as a very efficient tax saving tool. It provides you the substantial tax exemption under section 80D.</p>
+        <u>Investment Amount: </u>
+        {{#ifCond salary 255000}}
+        <b><p class="card-text amount">₹55,000</p></b><br>
+        {{else}}
+        {{#ifCond salary 200000}}
+        <b><p class="card-text amount">₹{{salary2}}</p></b><br>
+        {{else}}
+        <b><p class="card-text amount">₹0</p></b><br>
+        {{/ifCond}}
+        {{/ifCond}}
+      </div>
+    </div>
+  </div>
+</div>
+<ul>
+    <li><h2>Other Investments</h2>
+    </ul><br>
+    <div class="card mb-5" id="card1">
+  <div class="row no-gutters">
+    <div class="col-md-3" >
+        <br><br>
+      <img src="../public/index.jpg" class="card-img" alt="..." id="pic4" border="100" >
+    </div>
+    <div class="col-md-7">
+      <div class="card-body" id="card1b">
+          <br>
+        <h2 class="card-title">Index Funds</h2>
+        <p class="card-text">Index funds are mutual funds or exchange-traded funds that are designed to track the components of a financial market index, such as the Nifty or Sensex. These indexes are a reflection of the GDP of the country. The GDP of a developing country like ours is bound to rise and hence index funds would surely provide great returns in the long run. Index funds have very low fee and can beat most actively managed mutual funds over a long period of time. Index funds seek to match the risk and return of the market, on the theory that long-term, the market will outperform any single investment.</p>
+        <u>Investment Amount: </u>
+        {{#ifCond salary 255000}}
+        {{#ifCond age 70}}
+        <b><p class="card-text amount">₹{{salary4}}</p></b><br>
+        {{else}}
+          {{#ifCond age 50}}
+        <b><p class="card-text amount">₹{{salary5}}</p></b><br>
+          {{else}}
+        <b><p class="card-text amount">₹{{salary6}}</p></b><br>
+        {{/ifCond}}
+        {{/ifCond}}
+        {{else}}
+        <b><p class="card-text amount">₹0</p></b><br>
+        {{/ifCond}}
+      </div>
+    </div>
+  </div>
+</div>
+  <div class="card mb-5" id="card1">
+  <div class="row no-gutters">
+    <div class="col-md-3" >
+        <br><br>
+      <img src="../public/mutual.png" class="card-img" alt="..." id="pic5">
+    </div>
+    <div class="col-md-7">
+      <div class="card-body" id="card1b">
+          <br>
+        <h2 class="card-title">Actively managed mutual funds</h2>
+        <p class="card-text">A mutual fund is a professionally managed investment fund that pools money from many investors to purchase securities. Mutual funds provide various advantages, the most important of them being diversification. Diversification is a risk management strategy that mixes a wide variety of investments within a portfolio. Mutual funds also have many other advantages like high liquidity and professional investment management thus making them a great investment option. Regular investments can be made in mutual funds through Systematic Investment Plans(SIPs), which provide the benefit of rupee cost averaging.</p>
+        <u>Investment Amount: </u>
+        {{#ifCond salary 255000}}
+        {{#ifCond age 70}}
+        <b><p class="card-text amount">₹0</p></b><br>
+        {{else}}
+        <b><p class="card-text amount">₹{{salary3}}</p></b><br>
+        {{/ifCond}}
+        {{else}}
+        <b><p class="card-text amount">₹0</p></b><br>
+        {{/ifCond}}
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="card mb-5" id="card1">
+  <div class="row no-gutters">
+    <div class="col-md-3" >
+        <br><br>
+      <img src="../public/governmentbond.png" class="card-img" alt="..." id="pic6">
+    </div>
+    <div class="col-md-7">
+      <div class="card-body" id="card1b">
+          <br>
+        <h2 class="card-title">Government Bonds/Fixed Deposit</h2>
+        <p class="card-text">A government bond is a bond issued by a national government, generally with a promise to pay periodic interest payments called coupon payments and to repay the face value on the maturity date. The aim of a government bond is to support government spending. Government securities provide a fixed rate of interest and are not affected by the rise or fall of the stock market. Thus, Government bonds and fixed deposits are some of the most secure investments and a considerable amount of money should be invested in them. </p>
+        <u>Investment Amount: </u>
+        {{#ifCond salary 255000}}
+        {{#ifCond age 70}}
+        <b><p class="card-text amount">₹{{salary8}}</p></b><br>
+        {{else}}
+          {{#ifCond age 60}}
+          {{#if retired}}
+        <b><p class="card-text amount">₹{{salary7}}</p></b><br>
+          {{else}}
+          <b><p class="card-text amount">₹{{salary6}}</p></b><br>
+          {{/if}}
+          {{else}}
+          {{#ifCond age 50}}
+          {{#if retired}}
+          <b><p class="card-text amount">₹{{salary7}}</p></b><br>
+          {{else}}
+          <b><p class="card-text amount">₹{{salary6}}</p></b><br>
+          {{/if}}
+          {{else}}
+          {{#ifCond age 40}}
+          <b><p class="card-text amount">₹{{salary4}}</p></b><br>
+          {{else}}
+          <b><p class="card-text amount">₹{{salary3}}</p></b><br>
+          {{/ifCond}}
+        {{/ifCond}}
+        {{/ifCond}}
+        {{/ifCond}}
+        {{else}}
+        <b><p class="card-text amount">₹0</p></b><br>
+        {{/ifCond}}
+      </div>
+    </div>
+  </div>
+</div>
+  <div class="card mb-5" id="card1">
+  <div class="row no-gutters">
+    <div class="col-md-3" >
+        <br><br>
+      <img src="../public/midcap.jpg" class="card-img" alt="..." id="pic7">
+    </div>
+    <div class="col-md-7">
+      <div class="card-body" id="card1b">
+          <br>
+        <h2 class="card-title">Mid Cap stocks</h2>
+        <p class="card-text">Mid cap stocks are stocks of companies ranging from 101th to 250th in terms of market capitalization. Mid cap stocks can provide higher returns than large cap stocks but they are not very secure. The risk associated with mid cap stocks is higher than large cap stocks but lower than small cap stocks. Liquidity as well as company information available for mid cap stocks is higher than that of small cap stocks but lower than that of large cap stocks.</p>
+        <u>Investment Amount: </u>
+        {{#ifCond salary 255000}}
+        {{#ifCond age 50}}
+        <b><p class="card-text amount">₹{{salary9}}</p></b><br>
+        {{else}}
+          {{#ifCond age 40}}
+        <b><p class="card-text amount">₹{{salary3}}</p></b><br>
+          {{else}}
+        <b><p class="card-text amount">₹{{salary4}}</p></b><br>
+        {{/ifCond}}
+        {{/ifCond}}
+        {{else}}
+        <b><p class="card-text amount">₹0</p></b><br>
+        {{/ifCond}}
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="card mb-5" id="card1">
+  <div class="row no-gutters">
+    <div class="col-md-3" >
+        <br><br>
+      <img src="../public/smallcap.jpg" class="card-img" alt="..." id="pic8">
+    </div>
+    <div class="col-md-7">
+      <div class="card-body" id="card1b">
+          <br>
+        <h2 class="card-title">Small-cap stocks</h2>
+        <p class="card-text">Small cap stocks are stocks of companies from the 251st company onwards in terms of market capitalization. Small cap stocks can provide much higher returns than mid cap and large cap stocks but they are not very secure. The risk associated with small cap stocks is higher than large cap and mid cap stocks. Liquidity as well as company information available for small cap stocks is lower than that of large cap and mid cap stocks </p>
+        <u>Investment Amount: </u>
+        {{#ifCond salary 255000}}
+        {{#ifCond age 50}}
+        <b><p class="card-text amount">₹{{salary9}}</p></b><br>
+        {{else}}
+        <b><p class="card-text amount">₹{{salary3}}</p></b><br>
+        {{/ifCond}}
+        {{else}}
+        <b><p class="card-text amount">₹0</p></b><br>
+        {{/ifCond}}
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="card mb-5" id="card1">
+  <div class="row no-gutters">
+    <div class="col-md-3" >
+        <br><br>
+      <img src="../public/REIT.jpg" class="card-img" alt="..." id="pic9">
+    </div>
+    <div class="col-md-7">
+      <div class="card-body" id="card1b">
+          <br>
+        <h2 class="card-title">Real Estate Investment Trusts(REITs)</h2>
+        <p class="card-text">A real estate investment trust(REIT) is a company that owns, operates or finances income-producing real estate across a range of property sectors such as hospitals, offices, hotels etc. REITs provide investors the chance to own valuable real estate, present the opportunity to access dividend-based income and total returns, and help communities grow, thrive, and revitalize. They are preferred over investments in real estate because they have less maintenance fee, high liquidity and lower chances of fraud due to more transparency.</p>
+        <u>Investment Amount: </u>
+        {{#ifCond salary 255000}}
+        {{#ifCond age 70}}
+        <b><p class="card-text amount">₹0</p></b><br>
+        {{else}}
+        {{#ifCond age 60}}
+        {{#if retired}}
+        <b><p class="card-text amount">₹0</p></b><br>
+        {{else}}
+        <b><p class="card-text amount">₹{{salary3}}</p></b><br>
+        {{/if}}
+        {{else}}
+          {{#ifCond age 50}}
+            {{#if retired}}
+            <b><p class="card-text amount">₹0</p></b><br>
+            {{else}}
+            <b><p class="card-text amount">₹{{salary3}}</p></b><br>
+            {{/if}}
+            {{else}}
+        <b><p class="card-text amount">₹{{salary3}}</p></b><br>
+        {{/ifCond}}
+        {{/ifCond}}
+        {{/ifCond}}
+        {{else}}
+        <b><p class="card-text amount">₹0</p></b><br>
+        {{/ifCond}}
+      </div>
+    </div>
+  </div>
+</div>
+{{#if loggedIn}}
+<form action="/" method="GET">
+<center><button type="submit" class="btn btn-primary btn-lg" id="button2"> Log Out </button></center>
+</form>
+{{else}}
+<form action="/signup" method="GET">
+<center><button type="submit" class="btn btn-primary btn-lg" id="button1"> Proceed to Sign Up </button></center>
+</form>
+{{/if}}
+{{/each}}
+<br><br><br>
+    </div>
+    </div>
+    </div>
+    <footer id="foot">
+        <br>
+        <center><h5>&copy; 2019  ||  Made by Sankush Gupta</h5></center>
+        <br>
+      </footer>
+</body>
+</html>
